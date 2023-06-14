@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.arthur.test.grpc;
+
+
+message TestRequest {
+    string stringRequest = 1;
+    int64 longRequest = 2;
+}
+
+message TestResponse {
+    string stringResponse = 1;
+    int64 longResponse = 2;
+}
+
+service GrpcTestService {
+    rpc testCallService(TestRequest) returns (TestResponse) {}
+    rpc testCallServiceNoAnnotation(TestRequest) returns (TestResponse) {}
+}

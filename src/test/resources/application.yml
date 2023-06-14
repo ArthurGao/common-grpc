@@ -1,0 +1,15 @@
+# allows integration tests to selectively replace beans
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: test-app-arthur-grpc
+
+#Integration test gRPC configuration
+grpc:
+  server:
+    inProcessName: test
+    port: -1
+  client:
+    inProcess:
+      address: in-process:test
